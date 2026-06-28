@@ -91,3 +91,46 @@ popup.style.display="none";
 });
 
 }
+function abrirPagina(nome){
+
+    window.location.href = nome + ".html";
+
+}
+
+// ===========================
+// PRIMEIRO ACESSO
+// ===========================
+
+window.onload = function(){
+
+    const primeiro = localStorage.getItem("primeiroAcesso");
+
+    if(primeiro != "sim"){
+
+        document.getElementById("boasVindas").style.display = "flex";
+
+    }
+
+}
+
+function entrarApp(){
+
+    localStorage.setItem("primeiroAcesso","sim");
+
+    document.getElementById("boasVindas").style.display="none";
+
+}
+
+function abrirModal(titulo,texto){
+
+    document.getElementById("modalTitulo").innerHTML = titulo;
+    document.getElementById("modalTexto").innerHTML = texto;
+    document.getElementById("modal").style.display = "flex";
+
+}
+
+function fecharModal(){
+
+    document.getElementById("modal").style.display = "none";
+
+}

@@ -10,7 +10,8 @@
 
     <title>Nosso Cantinho</title>
 
-    <script src="../script.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
 
 </head>
 
@@ -18,63 +19,59 @@
 
 <div class="background">
 
-<div class="menu-card">
+    <div class="menu-card">
 
-    <h2 id="saudacao"></h2>
+        <h2 id="saudacao"></h2>
 
-   <h1 id="titulo">
+        <h1 id="titulo">
 
-    Escolha uma surpresa ✨
+            Escolha uma surpresa ✨
 
-</h1>
+        </h1>
 
-    <p id="frase"></p>
+        <p id="frase"></p>
 
-    <div class="opcao">
+        <div class="opcao" onclick="abrirPagina('cartas')">
 
-        💌 Cartinhas
+            💌 Cartinhas
 
-    </div>
+        </div>
 
-    <div class="opcao">
+        <div class="opcao" onclick="abrirPagina('quiz')">
 
-        🎮 Nosso Quiz
+            🎮 Nosso Quiz
 
-    </div>
+        </div>
 
-    <div class="opcao">
+        <div class="opcao" onclick="abrirPagina('palavra')">
 
-        🌸 Palavra do Amor
+            🌸 Palavra do Amor
 
-    </div>
+        </div>
 
-    <div class="opcao">
+        <div class="opcao" onclick="abrirPagina('capsulas')">
 
-        💖 Caça ao Coração
+            ⏳ Cápsulas
 
-    </div>
+        </div>
 
-    <div class="opcao">
+        <div class="opcao" onclick="abrirPagina('contador')">
 
-        📅 Contador
+            📅 Contador
 
-    </div>
+        </div>
 
-    <div class="opcao">
+        <div class="opcao" onclick="abrirPagina('conquistas')">
 
-        🏆 Conquistas
+            🏆 Conquistas
+
+        </div>
 
     </div>
 
 </div>
 
-</div>
-
-<script src="../script.js"></script>
-
-</body>
-
-
+<!-- Popup -->
 
 <div id="segredo" class="popup">
 
@@ -88,7 +85,7 @@
 
             Isso significa que você gosta de explorar tudo.
 
-            Eu adoro isso em você. 
+            Eu adoro isso em você. 💜
 
         </p>
 
@@ -101,5 +98,39 @@
     </div>
 
 </div>
+
+<!-- Modal -->
+
+<div id="modal" class="modal">
+
+    <div class="modal-card">
+
+        <div id="modalEmoji">
+
+            🌸
+
+        </div>
+
+        <h2 id="modalTitulo"></h2>
+
+        <p id="modalTexto"></p>
+
+        <button onclick="fecharModal()">
+
+            Continuar
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Scripts -->
+
+<script src="../script.js"></script>
+
+<script src="../js/menu.js"></script>
+
+</body>
 
 </html>
