@@ -20,7 +20,7 @@ if(hora < 12){
 
 else if(hora < 18){
 
-    saudacao.innerHTML = "Boa tarde 🌷";
+    saudacao.innerHTML = "Boa tarde ";
 
 }
 

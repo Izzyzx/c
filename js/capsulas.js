@@ -22,20 +22,20 @@ const capsulas = [
     {
         tipo: "memoria",
 
-        titulo: "Primeiro Beijo",
+        titulo: "Que dia foi o nosso primeiro beijo, baby shark?",
 
-        chave: "12/04/2025",
+        senha: "12/04/2025", 
 
-        dica: "Pssiu... 🤭 Talvez seja o dia do nosso primeiro beijo.",
+        dica: "Pssiu... 🤭 foi na sua casa",
 
         texto: `
-        Você lembrou!
+        Você lembrou hihi
 
         Então eu tenho certeza
         de que esse momento também
         é especial para você.
 
-        💖
+        
         `
     }
 
@@ -110,14 +110,15 @@ capsulas.forEach((capsula) => {
                 <p class="dica-memoria"></p>
 
                 <label>
-                    Qual é a chave?
+                    Qual é a senha?
                 </label>
 
                 <input
                     type="text"
                     class="campo-chave"
-                    placeholder="DD/MM/AAAA"
+                    placeholder="dia/mês/ano"
                     maxlength="10"
+                    oninput="formatarCampoData(this)"
                 >
 
                 <button onclick="verificarMemoria(this)">
@@ -130,7 +131,7 @@ capsulas.forEach((capsula) => {
 
         `;
 
-        card.dataset.chave = capsula.chave;
+        card.dataset.chave = capsula.senha;
         card.dataset.texto = capsula.texto;
         card.dataset.dica = capsula.dica;
 
@@ -197,11 +198,11 @@ function mostrarMemoria(botao) {
     setTimeout(() => {
 
         dica.textContent =
-            "Pssiu... 🤭 Quer uma dica? Talvez seja o dia do nosso primeiro beijo...";
+            "Pssiu... 🤭 Quer uma dica? foi na sua casa";
 
         dica.classList.add("visivel");
 
-    }, 3000);
+    }, 5000);
 
 }
 
@@ -247,6 +248,7 @@ function verificarMemoria(botao) {
 
         resultado.textContent =
             "🔒 Hmm... essa não é a chave. Tente novamente.";
+           "🔒 Hmm... ainda não é essa tbm";
 
         resultado.classList.remove("correto");
 
@@ -265,4 +267,25 @@ function formatarData(data) {
 
     return `${partes[2]}/${partes[1]}/${partes[0]}`;
 
+}
+
+function formatarCampoData(campo) {
+
+    let valor = campo.value.replace(/\D/g, "");
+
+    if (valor.length > 2) {
+        valor =
+            valor.substring(0, 2) +
+            "/" +
+            valor.substring(2);
+    }
+
+    if (valor.length > 5) {
+        valor =
+            valor.substring(0, 5) +
+            "/" +
+            valor.substring(5, 9);
+    }
+
+    campo.value = valor;
 }

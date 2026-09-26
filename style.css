@@ -11,7 +11,7 @@
     --roxo: #CFA8FF;
 
     --verde: #DFF7E3;
-    --azul: #DDEBFF;
+    --azul: #98c1fc;
 
     --branco: #FFFFFF;
 
@@ -461,6 +461,38 @@ button:hover {
 
 }
 
+.campo-chave {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 2px solid #E7D8FF;
+
+    border-radius: 16px;
+
+    background: #FFF8FC;
+
+    color: #5F5472;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    outline: none;
+
+    transition: 0.25s;
+
+}
+.campo-chave::placeholder {
+
+    color: #B8AFC2;
+
+    opacity: 1;
+    border-radius: 1;
+}
 
 /* ========================================
    ANIMAÇÃO
