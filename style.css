@@ -1,281 +1,487 @@
-/* ============================
-        PALETA
-============================ */
+/* ========================================
+   PALETA
+======================================== */
 
-:root{
+:root {
 
-    --rosa:#FFD8E6;
-    --rosa2:#FFC7DD;
+    --rosa: #FFD8E6;
+    --rosa2: #FFC7DD;
 
-    --lilas:#E7D8FF;
-    --roxo:#CFA8FF;
+    --lilas: #E7D8FF;
+    --roxo: #CFA8FF;
 
-    --verde:#DFF7E3;
+    --verde: #DFF7E3;
+    --azul: #DDEBFF;
 
-    --azul:#DDEBFF;
+    --branco: #FFFFFF;
 
-    --branco:#FFFFFF;
+    --texto: #5F5472;
 
-    --texto:#5F5472;
-
-    --sombra:0 15px 35px rgba(0,0,0,.12);
-
-}
-Reset
-*{
-
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-
+    --sombra: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
-body{
 
-   body{
+/* ========================================
+   RESET
+======================================== */
 
-    font-family:'Poppins', sans-serif;
+* {
 
-    min-height:100vh;
+    margin: 0;
+    padding: 0;
 
-    background:linear-gradient(
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background: linear-gradient(
         180deg,
         #FFE8F1,
         #F4ECFF,
         #EAF4FF
     );
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-}
-   
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-}
-/* ============================
-      TELA INICIAL
-============================ */
-.background{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:30px;
+    color: var(--texto);
 
 }
 
-.menu-card{
 
-    width:420px;
+/* ========================================
+   TELA INICIAL
+======================================== */
 
-    background:rgba(255,255,255,.78);
+.background {
 
-    backdrop-filter:blur(18px);
+    width: 100%;
+    min-height: 100vh;
 
-    border-radius:40px;
+    display: flex;
 
-    padding:40px;
+    justify-content: center;
+    align-items: center;
 
-    text-align:center;
-
-    box-shadow:var(--sombra);
-
-}
-
-.card h1{
-
-    font-size:52px;
-
-    color:var(--texto);
-
-    line-height:1.1;
-
-    margin-bottom:15px;
-
-}
-.card p{
-
-    color:#777;
-
-    line-height:1.8;
-
-    font-size:18px;
+    padding: 30px;
 
 }
 
-.kitty{
 
-    margin:30px 0;
+.card {
 
-}
-.kitty img{
+    width: 420px;
+    max-width: 100%;
 
-    width:220px;
+    background: rgba(255, 255, 255, 0.78);
 
-    transition:.4s;
+    backdrop-filter: blur(18px);
 
-}
-#saudacao{
+    border-radius: 40px;
 
-    color:#8A74A7;
+    padding: 40px;
 
-    margin-bottom:10px;
+    text-align: center;
 
-    font-size:18px;
+    box-shadow: var(--sombra);
 
 }
 
-#titulo{
 
-    color:var(--texto);
+.card h1 {
 
-    font-size:34px;
+    font-size: 52px;
 
-    margin-bottom:15px;
+    color: var(--texto);
 
-}
+    line-height: 1.1;
 
-#frase{
-
-    color:#777;
-
-    margin-bottom:35px;
-
-    line-height:1.6;
+    margin-bottom: 15px;
 
 }
 
-.opcao{
 
-    background:white;
+.card p {
 
-    border-radius:20px;
+    color: #777;
 
-    padding:18px;
+    line-height: 1.8;
 
-    margin-bottom:15px;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-    font-size:18px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    font-size: 18px;
 
 }
 
-.modal{
 
-    position:fixed;
+.stars {
 
-    inset:0;
+    color: #D68AB0;
 
-    display:none;
+    font-size: 25px;
 
-    justify-content:center;
-
-    align-items:center;
-
-    background:rgba(0,0,0,.25);
-
-    backdrop-filter:blur(6px);
-
-    z-index:999;
+    margin-bottom: 15px;
 
 }
 
-.modal-card{
 
-    width:340px;
+.kitty {
 
-    background:white;
-
-    border-radius:30px;
-
-    padding:30px;
-
-    text-align:center;
-
-    box-shadow:var(--sombra);
-
-    animation:subir .35s;
+    margin: 30px 0;
 
 }
 
-button{
 
-    width:100%;
+.kitty img {
 
-    padding:18px;
+    width: 220px;
 
-    margin-top:25px;
+    max-width: 100%;
 
-    border:none;
+    transition: 0.4s;
 
-    border-radius:18px;
+}
 
-    cursor:pointer;
 
-    font-size:18px;
+.kitty img:hover {
 
-    font-weight:600;
+    transform: translateY(-5px) scale(1.03);
 
-    color:#5F5472;
+}
 
-    background:linear-gradient(
+
+/* ========================================
+   MENU
+======================================== */
+
+.menu-card {
+
+    width: 420px;
+    max-width: 100%;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 40px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: var(--sombra);
+
+}
+
+
+#saudacao {
+
+    color: #8A74A7;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+}
+
+
+#titulo {
+
+    color: var(--texto);
+
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+
+}
+
+
+#frase {
+
+    color: #777;
+
+    margin-bottom: 35px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ========================================
+   OPÇÕES DO MENU
+======================================== */
+
+.opcao {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 18px;
+
+    margin-bottom: 15px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    font-size: 18px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.opcao:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(200, 150, 200, 0.20);
+
+    background: #FFF8FB;
+
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+button {
+
+    width: 100%;
+
+    padding: 18px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: var(--texto);
+
+    background: linear-gradient(
         90deg,
         var(--rosa),
         var(--lilas)
     );
 
-    transition:.3s;
+    transition: 0.3s;
 
-    box-shadow:0 8px 18px rgba(255,160,200,.35);
-
-}
-button:hover{
-
-    transform:translateY(-3px) scale(1.02);
-
-    box-shadow:0 12px 25px rgba(255,160,200,.45);
+    box-shadow: 0 8px 18px rgba(255, 160, 200, 0.35);
 
 }
 
-@keyframes subir{
 
-from{
+button:hover {
 
-    opacity:0;
+    transform: translateY(-3px) scale(1.02);
 
-    transform:translateY(25px);
+    box-shadow: 0 12px 25px rgba(255, 160, 200, 0.45);
+
+}
+
+
+/* ========================================
+   MODAIS
+======================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(80, 60, 90, 0.25);
+
+    backdrop-filter: blur(6px);
+
+    z-index: 999;
 
 }
 
-to{
 
-    opacity:1;
+.modal-card {
 
-    transform:translateY(0);
+    width: 340px;
+    max-width: 90%;
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: var(--sombra);
+
+    animation: subir 0.35s;
 
 }
+
+
+/* ========================================
+   POPUP DE SEGREDO
+======================================== */
+
+.popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(80, 60, 90, 0.25);
+
+    backdrop-filter: blur(6px);
+
+    z-index: 1000;
+
+}
+
+
+.popup-card {
+
+    width: 340px;
+    max-width: 90%;
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: var(--sombra);
+
+}
+
+
+/* ========================================
+   CÁPSULAS
+======================================== */
+
+.capsulas {
+
+    width: 420px;
+
+    max-width: calc(100% - 40px);
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 35px;
+
+    box-shadow: var(--sombra);
+
+}
+
+
+.capsulas h1 {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.capsula {
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+
+}
+
+
+.capsula:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(200, 150, 200, 0.20);
+
+}
+
+
+.capsula h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.capsula p {
+
+    color: #777;
+
+    line-height: 1.5;
+
+}
+
+
+/* ========================================
+   ANIMAÇÃO
+======================================== */
+
+@keyframes subir {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
 
 }

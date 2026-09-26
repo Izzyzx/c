@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta 
+      name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nosso Cantinho</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="menu-card">
+
+        <h2 id="saudacao"></h2>
+
+        <h1 id="titulo">
+
+            Escolha uma surpresa ✨
+
+        </h1>
+
+        <p id="frase"></p>
+
+        <div class="opcao" onclick="abrirPagina('cartas')">
+
+            💌 Cartinhas
+
+        </div>
+
+        <div class="opcao" onclick="abrirPagina('quiz')">
+
+            🎮 Nosso Quiz
+
+        </div>
+
+        <div class="opcao" onclick="abrirPagina('palavra')">
+
+            🌸 Palavra do Amor
+
+        </div>
+
+        <div class="opcao" onclick="abrirPagina('capsulas')">
+
+            ⏳ Cápsulas
+
+        </div>
+
+        <div class="opcao" onclick="abrirPagina('contador')">
+
+            📅 Contador
+
+        </div>
+
+        <div class="opcao" onclick="abrirPagina('conquistas')">
+
+            🏆 Conquistas
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Popup -->
+
+<div id="segredo" class="popup">
+
+    <div class="popup-card">
+
+        <h2>🌸 Segredo encontrado!</h2>
+
+        <p>
+
+            Você encontrou uma cartinha escondida.
+
+            Isso significa que você gosta de explorar tudo.
+
+            Eu adoro isso em você. 💜
+
+        </p>
+
+        <button id="fechar">
+
+            Fechar
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Modal -->
+
+<div id="modal" class="modal">
+
+    <div class="modal-card">
+
+        <div id="modalEmoji">
+
+            🌸
+
+        </div>
+
+        <h2 id="modalTitulo"></h2>
+
+        <p id="modalTexto"></p>
+
+        <button onclick="fecharModal()">
+
+            Continuar
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- Scripts -->
+
+<script src="../script.js"></script>
+
+<script src="../js/menu.js"></script>
+
+</body>
+
+</html>

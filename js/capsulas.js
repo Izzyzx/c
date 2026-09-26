@@ -1,142 +1,268 @@
 const capsulas = [
 
-{
-    tipo: "tempo",
+    {
+        tipo: "tempo",
 
-    titulo: "Nosso Futuro",
+        titulo: "Nosso Futuro",
 
-    data: "2027-12-31",
+        data: "2027-12-31",
 
-    texto: `
-Se você está lendo isso...
+        texto: `
+        Se você está lendo isso...
 
-o futuro finalmente chegou.
+        o futuro finalmente chegou.
 
-Espero que ainda estejamos
-colecionando momentos lindos.
+        Espero que ainda estejamos
+        colecionando momentos lindos.
 
-💜
-`
-},
+        💜
+        `
+    },
 
-{
-    tipo: "memoria",
+    {
+        tipo: "memoria",
 
-    titulo: "Primeiro Beijo",
+        titulo: "Primeiro Beijo",
 
-    chave: "12/04/2025",
+        chave: "12/04/2025",
 
-    dica: "Pssiu... 🤭\nTalvez seja o dia do nosso primeiro beijo.",
+        dica: "Pssiu... 🤭 Talvez seja o dia do nosso primeiro beijo.",
 
-    texto: `
-Você lembrou!
+        texto: `
+        Você lembrou!
 
-Então eu tenho certeza
-de que esse momento também
-é especial para você.
+        Então eu tenho certeza
+        de que esse momento também
+        é especial para você.
 
-💖
-`
-}
+        💖
+        `
+    }
 
 ];
 
+
 const lista = document.getElementById("listaCapsulas");
 
-capsulas.forEach(capsula=>{
 
-const card=document.createElement("div");
+capsulas.forEach((capsula) => {
 
-card.className="capsula";
+    const card = document.createElement("div");
 
-if(capsula.tipo=="tempo"){
+    card.className = "capsula";
 
-card.innerHTML=`
 
-<h2>${capsula.titulo}</h2>
+    /* =========================
+       CÁPSULA DO FUTURO
+    ========================= */
 
-<p>🔒 Abre em ${capsula.data}</p>
+    if (capsula.tipo === "tempo") {
 
-<button onclick="abrirTempo('${capsula.data}','${capsula.texto}')">
+        card.innerHTML = `
 
-Abrir
+            <div class="icone-capsula">
+                🔒
+            </div>
 
-</button>
+            <h2>${capsula.titulo}</h2>
 
-`;
+            <p>
+                Esta cápsula só poderá ser aberta em
+                <strong>${formatarData(capsula.data)}</strong>.
+            </p>
 
-}
+            <button onclick="abrirTempo('${capsula.data}', this)">
+                Tentar abrir
+            </button>
 
-else{
+            <p class="mensagem-capsula"></p>
 
-card.innerHTML=`
+        `;
 
-<h2>${capsula.titulo}</h2>
+    }
 
-<p>🔑 Cápsula da Memória</p>
 
-<button onclick="abrirMemoria('${capsula.chave}','${capsula.texto}','${capsula.dica}')">
+    /* =========================
+       CÁPSULA DA MEMÓRIA
+    ========================= */
 
-Abrir
+    else {
 
-</button>
+        card.innerHTML = `
 
-`;
+            <div class="icone-capsula">
+                🔒
+            </div>
 
-}
+            <h2>${capsula.titulo}</h2>
 
-lista.appendChild(card);
+            <p>
+                Uma lembrança escondida
+                especialmente para você.
+            </p>
+
+            <button onclick="mostrarMemoria(this)">
+                Abrir cápsula
+            </button>
+
+            <div class="area-memoria">
+
+                <p class="dica-memoria"></p>
+
+                <label>
+                    Qual é a chave?
+                </label>
+
+                <input
+                    type="text"
+                    class="campo-chave"
+                    placeholder="DD/MM/AAAA"
+                    maxlength="10"
+                >
+
+                <button onclick="verificarMemoria(this)">
+                    🔓 Desbloquear
+                </button>
+
+                <p class="resultado-memoria"></p>
+
+            </div>
+
+        `;
+
+        card.dataset.chave = capsula.chave;
+        card.dataset.texto = capsula.texto;
+        card.dataset.dica = capsula.dica;
+
+    }
+
+
+    lista.appendChild(card);
 
 });
 
-function abrirTempo(data,texto){
 
-const hoje=new Date();
+/* =========================
+   CÁPSULA DO FUTURO
+========================= */
 
-const liberar=new Date(data);
+function abrirTempo(data, botao) {
 
-if(hoje>=liberar){
+    const hoje = new Date();
 
-alert(texto);
+    const liberar = new Date(data + "T00:00:00");
 
-}
+    const mensagem = botao
+        .parentElement
+        .querySelector(".mensagem-capsula");
 
-else{
 
-alert("🔒 Ainda não chegou a hora.");
+    if (hoje >= liberar) {
 
-}
+        mensagem.textContent =
+            "🔓 A cápsula foi desbloqueada!";
 
-}
+    }
 
-function abrirMemoria(chave,texto,dica){
+    else {
 
-let resposta="";
+        mensagem.textContent =
+            `🔒 Ainda não chegou a hora...`;
 
-let tentativas=0;
-
-while(resposta!=null){
-
-resposta=prompt("Digite a chave...");
-
-if(resposta==null) return;
-
-if(resposta==chave){
-
-alert(texto);
-
-return;
+    }
 
 }
 
-tentativas++;
 
-if(tentativas==3){
+/* =========================
+   MOSTRAR CÁPSULA DA MEMÓRIA
+========================= */
 
-alert(dica);
+function mostrarMemoria(botao) {
+
+    const card = botao.parentElement;
+
+    const area = card.querySelector(".area-memoria");
+
+    const dica = card.querySelector(".dica-memoria");
+
+
+    area.classList.add("visivel");
+
+
+    /*
+        A dica aparece depois de alguns segundos.
+    */
+
+    setTimeout(() => {
+
+        dica.textContent =
+            "Pssiu... 🤭 Quer uma dica? Talvez seja o dia do nosso primeiro beijo...";
+
+        dica.classList.add("visivel");
+
+    }, 3000);
 
 }
 
+
+/* =========================
+   VERIFICAR CHAVE
+========================= */
+
+function verificarMemoria(botao) {
+
+    const card = botao.parentElement.parentElement;
+
+    const campo = card.querySelector(".campo-chave");
+
+    const resultado = card.querySelector(".resultado-memoria");
+
+    const chaveCorreta = card.dataset.chave;
+
+    const texto = card.dataset.texto;
+
+
+    const resposta = campo.value.trim();
+
+
+    if (resposta === chaveCorreta) {
+
+        resultado.textContent =
+            "🔓 Cápsula desbloqueada! 💖";
+
+
+        resultado.classList.add("correto");
+
+
+        setTimeout(() => {
+
+            alert(texto);
+
+        }, 500);
+
+    }
+
+    else {
+
+        resultado.textContent =
+            "🔒 Hmm... essa não é a chave. Tente novamente.";
+
+        resultado.classList.remove("correto");
+
+    }
+
 }
+
+
+/* =========================
+   FORMATAR DATA
+========================= */
+
+function formatarData(data) {
+
+    const partes = data.split("-");
+
+    return `${partes[2]}/${partes[1]}/${partes[0]}`;
 
 }
