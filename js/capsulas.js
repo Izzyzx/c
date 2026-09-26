@@ -5,7 +5,7 @@ const capsulas = [
 
         titulo: "Nosso Futuro",
 
-        data: "2027-12-31",
+        data: "2030-12-31?",
 
         texto: `
         Se você está lendo isso...
@@ -24,16 +24,17 @@ const capsulas = [
 
         titulo: "Que dia foi o nosso primeiro beijo, baby shark?",
 
-        senha: "12/04/2025", 
+        senha: "10/05/2025", 
 
-        dica: "Pssiu... 🤭 foi na sua casa",
+        dica: "Pssiu... foi na sua casa",
 
         texto: `
-        Você lembrou hihi
+        Você lembrou hihi (mais do que eu ksks aff)
 
         Então eu tenho certeza
         de que esse momento também
         é especial para você.
+        venha me dar mais beijinhos, amor
 
         
         `
