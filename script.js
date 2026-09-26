@@ -29,7 +29,7 @@ if (saudacao) {
 
     if (hora < 12) {
 
-        periodo = "Bom dia ";
+        periodo = "Bom dia "  ;
     
        
 
@@ -37,40 +37,42 @@ if (saudacao) {
 
     else if (hora < 18) {
 
-        periodo = "Boa tarde ";
+        periodo = "Boa tarde " ;
 
     }
 
     else {
 
-        periodo = "Boa noite";
+        periodo = "Boa noite " ;
 
     }
 
 
     const apelidos = [
 
-        "amor",
+        " amor",
 
-         "meu amor",
+         " meu amor",
 
-        "meu bem",
+        " meu bem",
 
-        "minha musa",
+        " minha musa",
 
-        "amor da minha vida",
+        " amor da minha vida",
 
-        "minha princesa",
+        " minha princesa",
 
-        "baby shark",
+        " baby shark",
 
-        "meu amorzinho",
+        " meu amorzinho",
 
-        "babie shark",
+        " babie shark",
 
-        "mandii",
+        " Mandii",
 
-        "aipimpim"
+        " Aipimpim",
+
+        " neném"
 
     ];
 
@@ -82,7 +84,7 @@ if (saudacao) {
 
 
     saudacao.innerHTML =
-        periodo + ", " + apelidos[numero];
+        periodo + ","+ apelidos[numero];
 
 }
 
@@ -234,27 +236,5 @@ function fecharModal() {
 
     document.getElementById("modal").style.display = "none";
 
-}
+} 
 
-function emBreve(nome) {
-
-    const modal = document.getElementById("modal");
-
-    const titulo = document.getElementById("modalTitulo");
-
-    const texto = document.getElementById("modalTexto");
-
-
-    if (modal && titulo && texto) {
-
-        titulo.innerHTML = nome + " ✨";
-
-        texto.innerHTML =
-            "Essa parte ainda está sendo preparada com muito carinho. <br><br>" +
-            "Em breve estará disponível para você okei";
-
-        modal.style.display = "flex";
-
-    }
-
-}
