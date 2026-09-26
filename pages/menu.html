@@ -31,19 +31,20 @@
 
         <p id="frase"></p>
 
-        <div class="opcao" onclick="abrirPagina('cartas')">
+
+            <div class="opcao" onclick="EmBreve(cartas)">
 
             💌 Cartinhas
 
         </div>
 
-        <div class="opcao" onclick="abrirPagina('quiz')">
+        <div class="opcao" onclick="EmBreve(quiz)">
 
             🎮 Nosso Quiz
 
         </div>
 
-        <div class="opcao" onclick="abrirPagina('palavra')">
+        <div class="opcao" onclick="EmBreve(Palavrasdoamor)">
 
             🌸 Palavra do Amor
 
@@ -55,13 +56,13 @@
 
         </div>
 
-        <div class="opcao" onclick="abrirPagina('contador')">
+        <div class="opcao" onclick="EmBreve('contador')">
 
             📅 Contador
 
         </div>
 
-        <div class="opcao" onclick="abrirPagina('conquistas')">
+        <div class="opcao" onclick="EmBreve('conquistas')">
 
             🏆 Conquistas
 
@@ -130,6 +131,10 @@
 <script src="../script.js"></script>
 
 <script src="../js/menu.js"></script>
+
+<button class="botao-voltar" onclick="window.location.href='../index.html'">
+    ← Voltar ao Nosso Cantinho
+</button>
 
 </body>
 

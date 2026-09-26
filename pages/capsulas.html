@@ -4,10 +4,11 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Cápsulas</title>
-<link rel="stylesheet" href="../style.css">
+    <title>Cápsulas</title>
+
+    <link rel="stylesheet" href="../style.css">
 
 </head>
 
@@ -15,19 +16,47 @@
 
 <div class="capsulas">
 
-<h1>
+    <h1>
+        ⏳ Cápsulas
+    </h1>
 
-⏳ Cápsulas
+    <div id="listaCapsulas">
+    </div>
 
-</h1>
+</div>
 
-<div id="listaCapsulas">
+
+<!-- MODAL DA CÁPSULA -->
+
+<div id="modalCapsula" class="modal">
+
+    <div class="modal-card">
+
+        <div class="icone-modal">
+            🔓
+        </div>
+
+        <h2 id="modalCapsulaTitulo">
+            Cápsula desbloqueada!
+        </h2>
+
+        <p id="modalCapsulaTexto"></p>
+
+        <button onclick="fecharModalCapsula()">
+            Fechar 
+        </button>
+
+    </div>
 
 </div>
 
-</div>
 
 <script src="../js/capsulas.js"></script>
+
+
+<button class="botao-voltar" onclick="window.location.href='menu.html'">
+    ← Voltar ao menu
+</button>
 
 </body>
 

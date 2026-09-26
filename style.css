@@ -181,11 +181,12 @@ body {
 
 #saudacao {
 
-    color: #8A74A7;
+    color: #fdc7f1;
 
     margin-bottom: 10px;
 
-    font-size: 18px;
+    font-size: 20px;
+    font-style: var(--sombra);
 
 }
 
@@ -494,6 +495,46 @@ button:hover {
     border-radius: 1;
 }
 
+
+.botao-voltar {
+
+    width: auto;
+
+    padding: 12px 20px;
+
+    margin-top: 20px;
+
+    border: 2px solid var(--lilas);
+
+    border-radius: 15px;
+
+    background: rgba(247, 226, 255, 0.75);
+
+    color: var(--texto);
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+    transition: 0.25s;
+}
+
+
+.botao-voltar:hover {
+
+    transform: translateY(-2px);
+
+    background: var(--lilas);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
+
+}
 /* ========================================
    ANIMAÇÃO
 ======================================== */
@@ -515,5 +556,31 @@ button:hover {
         transform: translateY(0);
 
     }
+
+}
+
+.icone-modal {
+
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+}
+
+#modalCapsulaTitulo {
+
+    color: var(--texto);
+
+    margin-bottom: 15px;
+
+}
+
+#modalCapsulaTexto {
+
+    color: #777;
+
+    line-height: 1.8;
+
+    white-space: normal;
 
 }

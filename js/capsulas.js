@@ -202,7 +202,7 @@ function mostrarMemoria(botao) {
 
         dica.classList.add("visivel");
 
-    }, 5000);
+    }, 4000);
 
 }
 
@@ -210,6 +210,8 @@ function mostrarMemoria(botao) {
 /* =========================
    VERIFICAR CHAVE
 ========================= */
+
+let tentativasMemoria = 0;
 
 function verificarMemoria(botao) {
 
@@ -238,22 +240,52 @@ function verificarMemoria(botao) {
 
         setTimeout(() => {
 
-            alert(texto);
+    abrirModalCapsula(texto);
 
-        }, 500);
+}, 400);
+    }
+
+   else {
+
+    tentativasMemoria++;
+
+    if (tentativasMemoria === 1) {
+
+        resultado.textContent =
+            "🔒 Hmm... essa não é a senha, amor";
+
+    }
+
+    else if (tentativasMemoria === 2) {
+
+        resultado.textContent =
+            "Não foi dessa vez... tenta lembrar";
+
+    }
+
+    else if (tentativasMemoria === 3) {
+
+        resultado.textContent =
+            "👀 Hmmm... você está esquecendo alguma coisa";
+
+    }
+
+    else if (tentativasMemoria === 4) {
+
+        resultado.textContent =
+            "💡 Última tentativa... lembra do dia especial";
 
     }
 
     else {
 
         resultado.textContent =
-            "🔒 Hmm... essa não é a chave. Tente novamente.";
-           "🔒 Hmm... ainda não é essa tbm";
-
-        resultado.classList.remove("correto");
+            " Baby Shark, você realmente esqueceu? KKKKK";
 
     }
 
+    resultado.classList.remove("correto");
+}
 }
 
 
@@ -288,4 +320,25 @@ function formatarCampoData(campo) {
     }
 
     campo.value = valor;
+}
+
+function abrirModalCapsula(texto) {
+
+    const modal = document.getElementById("modalCapsula");
+
+    const textoModal = document.getElementById("modalCapsulaTexto");
+
+    textoModal.innerHTML = texto.replace(/\n/g, "<br>");
+
+    modal.style.display = "flex";
+
+}
+
+
+function fecharModalCapsula() {
+
+    const modal = document.getElementById("modalCapsula");
+
+    modal.style.display = "none";
+
 }
